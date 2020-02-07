@@ -1,0 +1,39 @@
+version: "3"
+services:
+  mysqlDB:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - "3306:3306"
+    expose:
+      - 3306
+    environment:
+      MYSQL_HOST: localhost
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: trackdota
+  frontend:
+    container_name: trackdota_frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - trackdota_frontend:/app
+  backend:
+    container_name: trackdota_backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    depends_on:
+      - mysqlDB
+    ports:
+      - "4000:5000"
+    volumes:
+      - trackdota_backend:/app
+volumes:
+  trackdota_backend:
+  trackdota_frontend:

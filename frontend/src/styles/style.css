@@ -1,0 +1,141 @@
+:root {
+  --text-color: #ffcb9a;
+  --primary-color: #2c3531;
+  --secondary-color: #116466;
+  --temp-color: #d9b08c;
+  --light-color: #d1e8e2;
+}
+
+.bg-wrapper {
+  position: fixed;
+  z-index: -10;
+  opacity: 0.4;
+}
+
+.bg-wrapper img {
+  width: 100%;
+  height: 100vh;
+}
+
+.header {
+  background: var(--primary-color);
+}
+
+.header .logo {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-item a, .nav-item {
+  color: var(--text-color);
+  display: block;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+.nav-item a:hover {
+  color: var(--text-color);
+  box-shadow: 0 0 5px var(--text-color);
+}
+
+.user-block {
+  color: var(--text-color);
+  background: var(--secondary-color);
+  border-radius: 15px;
+  min-height: 200px;
+  margin-top: 20px;
+  padding: 15px;
+}
+
+.link {
+  color: var(--text-color);
+}
+
+.link a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+.link a:hover {
+  box-shadow: 0 0 5px var(--text-color);
+}
+
+.title {
+  font-size: 20px;
+}
+
+.form-submit button {
+  border: none;
+}
+
+.error-message {
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-size: 10px;
+  color: #D8000C;
+  background: #FFD2D2;
+}
+
+.loading {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.dropdown * {
+  color: var(--text-color);
+}
+
+.dropdown > .dropdown-menu {
+  background: var(--primary-color);
+  top: 200%;
+  transition: 0.3s all ease-in-out;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  top: 100%;
+  margin-top: -1px;
+}
+
+.dropdown > .dropdown-toggle:active {
+  pointer-events: none;
+}
+
+.dropdown-image {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.table {
+  color: var(--text-color);
+}
+
+.btn-custom {
+  color: var(--primary-color);
+  background: var(--temp-color);
+}
+
+.btn-custom:hover {
+  color: var(--primary-color);
+  background: var(--light-color);
+}
