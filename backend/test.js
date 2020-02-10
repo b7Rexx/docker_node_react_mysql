@@ -5,7 +5,6 @@ const mysql = require('mysql2');
 
 // create the connection to database
 const connection = mysql.createConnection({
-  // host: env.NODE_DB_HOST,
   host: env.NODE_DB_HOST,
   user: env.NODE_DB_USERNAME,
   password: env.NODE_DB_PASSWORD,
@@ -15,7 +14,7 @@ const connection = mysql.createConnection({
 
 connection.connect(function(err) {
   if (err) {
-    console.log("Not Connected! > >>  > > >> > > > > > >> > > > >> > > > > > >> > > > > > >> > ");
+    console.log("Not Connected! > >>  > > >> > > > > > >> > > > >> > > > > > >> > > > > > >> > ",env.NODE_DB_HOST);
 
     throw err;
   }

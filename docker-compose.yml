@@ -1,7 +1,7 @@
-version: "3"
+version: "3.3"
 services:
   mysqlDB:
-    image: mysql:latest
+    image: mysql:5.7
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     ports:
@@ -9,11 +9,12 @@ services:
     expose:
       - 3306
     environment:
-      MYSQL_HOST: localhost
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: root
-      MYSQL_DATABASE: trackdota
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_USER: "admin"
+      MYSQL_PASSWORD: "root"
+      MYSQL_DATABASE: "trackdota"
+    volumes:
+      - trackdota_mysql:/var/lib/mysql
   frontend:
     container_name: trackdota_frontend
     build:
@@ -37,3 +38,4 @@ services:
 volumes:
   trackdota_backend:
   trackdota_frontend:
+  trackdota_mysql:
