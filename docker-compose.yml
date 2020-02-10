@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.7"
 services:
   mysqlDB:
     image: mysql:5.7
@@ -22,8 +22,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:80"
-    volumes:
-      - trackdota_frontend:/app
   backend:
     container_name: trackdota_backend
     build:
@@ -33,9 +31,5 @@ services:
       - mysqlDB
     ports:
       - "4000:5000"
-    volumes:
-      - trackdota_backend:/app
 volumes:
-  trackdota_backend:
-  trackdota_frontend:
   trackdota_mysql:
