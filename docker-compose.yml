@@ -16,6 +16,7 @@ services:
     volumes:
       - trackdota_mysql:/var/lib/mysql
   frontend:
+    image: trackdota/frontend:latest
     container_name: trackdota_frontend
     build:
       context: ./frontend
@@ -23,6 +24,7 @@ services:
     ports:
       - "8080:80"
   backend:
+    image: trackdota/backend:latest
     container_name: trackdota_backend
     build:
       context: ./backend
